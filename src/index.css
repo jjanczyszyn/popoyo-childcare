@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory text-espresso font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-serif tracking-tight;
+  }
+  ::selection {
+    background: #C58F73;
+    color: #F7F2EA;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all;
+  }
+  .btn-primary {
+    @apply btn bg-clay text-ivory hover:bg-clayDeep shadow-sm;
+  }
+  .btn-secondary {
+    @apply btn border border-espresso/20 text-espresso hover:border-espresso/50 bg-ivory;
+  }
+  .btn-ghost {
+    @apply btn text-espresso/80 hover:text-espresso;
+  }
+  .container-prose {
+    @apply mx-auto px-6 sm:px-8 max-w-6xl;
+  }
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.18em] text-clayDeep font-medium;
+  }
+  .input-base {
+    @apply w-full rounded-lg border border-espresso/15 bg-ivory/60 px-4 py-3 text-sm text-espresso placeholder:text-espresso/40 focus:border-clay focus:outline-none focus:ring-2 focus:ring-clay/20 transition;
+  }
+  .label-base {
+    @apply block text-sm font-medium text-espresso mb-1.5;
+  }
+  .card {
+    @apply rounded-2xl border border-espresso/10 bg-ivory/60 p-6 shadow-sm;
+  }
+}
