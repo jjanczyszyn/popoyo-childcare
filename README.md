@@ -2,7 +2,7 @@
 
 Trusted in-home childcare site for families visiting Popoyo, Nicaragua.
 
-- Live site: <https://popoyochildcare.justinalydia.com>
+- Live site: <https://childcare.popoyo.co>
 - Stack: React + Vite + TypeScript + Tailwind on the frontend, [Convex](https://convex.dev) for backend (booking persistence + owner-tunable config), GitHub Pages for hosting.
 - The booking form opens WhatsApp with a formatted summary; if Convex is wired up, it also persists the booking so a coordinator can review it later.
 
@@ -34,7 +34,7 @@ npm run build      # outputs to dist/
 npm run preview    # local preview of dist/
 ```
 
-## Deploying to GitHub Pages under `popoyochildcare.justinalydia.com`
+## Deploying to GitHub Pages under `childcare.popoyo.co`
 
 The repo ships with `.github/workflows/deploy.yml` and `public/CNAME`. To go live:
 
@@ -46,10 +46,10 @@ The repo ships with `.github/workflows/deploy.yml` and `public/CNAME`. To go liv
    Copy the deployment URL it prints.
 3. **Set repo secret `VITE_CONVEX_URL`** to that URL: `Settings → Secrets and variables → Actions → New repository secret`.
 4. **Enable Pages**: `Settings → Pages → Build and deployment → Source: GitHub Actions`.
-5. **Add the custom domain in Pages**: enter `popoyochildcare.justinalydia.com` in the Pages settings. GitHub will create the `CNAME` file (we already include one) and start an HTTPS provisioning step.
-6. **DNS** — add a `CNAME` record at the registrar that owns `justinalydia.com`:
+5. **Add the custom domain in Pages**: enter `childcare.popoyo.co` in the Pages settings. GitHub will create the `CNAME` file (we already include one) and start an HTTPS provisioning step.
+6. **DNS** — add a `CNAME` record at the registrar that owns `popoyo.co`:
    ```
-   Name:  popoyochildcare
+   Name:  childcare
    Type:  CNAME
    Value: <github-username>.github.io.
    ```
@@ -80,7 +80,7 @@ convex/
   bookings.ts           # submit/list/byCode
   config.ts             # owner-tunable config + seed
 public/
-  CNAME                 # popoyochildcare.justinalydia.com
+  CNAME                 # childcare.popoyo.co
 .github/workflows/
   deploy.yml            # builds and deploys to GitHub Pages
 ```
